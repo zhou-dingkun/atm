@@ -1,0 +1,5 @@
+C:/Users/zdk/Desktop/project/atm/qt_gui/build/CMakeFiles/atm_gui_qt.dir
+C:/Users/zdk/Desktop/project/atm/qt_gui/build/CMakeFiles/edit_cache.dir
+C:/Users/zdk/Desktop/project/atm/qt_gui/build/CMakeFiles/rebuild_cache.dir
+C:/Users/zdk/Desktop/project/atm/qt_gui/build/CMakeFiles/atm_gui_qt_autogen_timestamp_deps.dir
+C:/Users/zdk/Desktop/project/atm/qt_gui/build/CMakeFiles/atm_gui_qt_autogen.dir

@@ -1,0 +1,175 @@
+文章编号 : 1001-5078( 2024) 02-0249-07 ·红外技术及应用·
+低层大气红外吸收透过率计算模型
+王志会，屈鸿伟，张晶涛，王东杰，邓骏杰 
+(空军预警学院，湖北武汉 )
+摘要:计算大气透过率是有效进行空中目标红外特性探测的重要前提。本文针对低层大气红外吸收透过率随海拔高度的变化规律，建立数值模拟计算模型。该模型在基于低层大气中水蒸气及 CO2吸收能力受海拔高度影响的基础上，增加了大气密度随高度变化产生的重要影响，综合分析了水平路程传输和倾斜路程传输两种情况下的低层大气吸收透过率。仿真实验将模型计算结果与MODTＲAN5软件计算结果进行了对比，有效验证了该模型的可靠性和有效性。关键词 :低层大气 ;吸收透过率 ;数值模拟 ;水平路程 ;倾斜路程中图分类号 : TN215; X122文献标识码 : A DOI:10．3969/j．iss1001-5078．2024．02．013 
+Calculation model of infrared absorption transmittance of lower atmosphere 
+WANG Z-H，QU Hg-W，ZHANG Ji-T，WANG Dg-Jie，DENG J-Jie ( Air Force Early Warning Academy，Wuhan 430019，China) 
+Abstract: Calculation of atmosphere transmittance is an important prerequisite for effective infrared characterization of airborne targets. In this paper，for the law of infrared absorption transmittance of lower atmosphere changing with alti-tude，a numerical simulation model is established. Based on the fact that water vapor and CO2 absorptive capacity in the lower atmosphere are affected by altitude，the important effect of atmospheric density change with altitude is add-ed，and the absorption transmittance of the lower atmosphere is analyzed comprehensively for both horizontal and in-clined path. The simulation experiments are conducted to compare the results of the numerical simulation model andMODTＲAN5，and the reliability and validity of the model is verified Keywords: lower atmosphere; absorption transmittance; numerical simulation; horizontal path; inclined path 
+1 引 言 的飞机、导弹等红外目标实现精确地跟踪、警戒和搜 
+随着红外探测技术的不断发展，通过对目标和 索，必须考虑大气透过率的影响，而且大气透过率往 
+背景的红外辐射特性分析，已经成为有效探测与识 往为决定性因素［2］。 
+别目标的重要方法。尤其对于夜间作战，依据红外 关于大气透过率的获取，目前常用的主要的方 
+辐射特性可清晰掌握目标和战场情况［1］。大气透 法有三种 :数值模拟计算［2－4］、软件计算 (如 LOWT- 
+过率对空中目标红外特性的传输产生重要的影响， Ｒ AN、MODTＲ AN )和实地测量［2］。其中，数值模拟 
+而红外探测系统接受的信号强度主要由目标红外辐 方法主要结合经验公式进行计算，在计算过程中，利 
+射强度和大气透过率共同决定。尤其对军事领域中 用测得的大气水蒸气含量［5］，可以快速地计算出不 
+
+作者简介 :王志会 ( 1991－)，男，硕士，讲师，主要研究方向为目标探测与识别技术。E-mail:wangzh126401@ 163．com收稿日期 : 2023-05-06;修订日期 : 2023-06-30 
+同地区的红外波段大气透过率。路远等人利用实验数据计算求得大气中水蒸气和 CO2的光谱吸收系数，并通过数值模拟的方法计算出海平面水平路径传输情况下的大气吸收透过率［6］。张亮、毛峡等人充分考虑温度和气压随海拔高度变化对大气吸收透过率的影响，建立水平传输及倾斜传输两种情况大气吸收透过率的计算模型［7－8］。实际中，在低层大气环境下，大气密度随海拔高度而变化，其对水蒸气及 CO2的吸收透过率也会产生重要的影响，不容忽视［8］。基于温度和气压对大气吸收透过率的影响，本文增加大气密度因素的影响，建立水蒸气、CO2红外吸收透过率计算数值模型，分析了水平路程传输及倾斜路程传输两种情况下的大气吸收透过率，并将计算结果与MODTＲAN5软件计算结果进行比较，充分验证了该模型的有效性。
+大气吸收透过率计算模型
+
+实际情况下，大气中的分子对红外辐射的吸收往往为选择性吸收，而这些吸收峰与分子的共振频率是对应的。分子振动和自旋共振频率都处于红外区域，而且主要分布在 2～ 15 μm。大气中，水蒸气是吸收红外辐射的主要因素，且主要集中在 2～ 3 大气层下 ;而大气中的 CO2虽然只占大气气体的 0. 03 %～0. 05 %，但它却是红外大气吸收的另一重要因素。此外，在低层大气环境中，氧化氮、一氧化碳等气体产生的吸收比较小，通常可以忽略不计［9］。图 1为大气垂直分层情况。
+
+
+图 1大气垂直分层示意图 Fig. 1 matic agram of vertical stratification of the atmosere 2. 1水蒸气吸收透过率
+水蒸气对红外辐射的吸收与其传输的路程中水分子的总量有直接关系。对于大气一段路程中水汽的含量通常用可凝结水毫米数来表示，它可以根据大气温度和相对湿度计算得到。即水蒸气在大气中式中，f ( mm /)为环境温度 T ( ℃ )时的饱和空气中水蒸气质量 ; Hr为相对湿度 ;Ｒ ( )为海平面水平传输距离 ; u( λ)( －1 )为水蒸气单色红外线性吸收系数。实验数据表明，在红外辐射通过水蒸气含量相等的路程情况下，大气透过率基本相等［10］。由此可以得出水蒸气大气吸收透过率为: 
+的含量 ω ( mm)为:  
+ω = f·H·Ｒr  ( 1) 
+相应的水蒸气吸收透过率为:  
+τH2O( λ)  = exp( －u( λ) ·ω)  ( 2) 
+
+τH2O( λ) = exp(－u1( λ) · ff 0 ·Hr ·Ｒ)( 3)
+式中，u1( λ)( －1 )为大气温度为 5℃，相对湿度为 0 %时海平面水平路径情况下水蒸气的单色红外线性吸收系数; f为大气温度为 T时饱和空气中的水蒸气质量 ; f0 ( mm /)为大气温度 5℃时饱和空气中的水蒸气质量，通过查询文献［5］可得到相应数据。
+由于水蒸气对红外辐射的吸收随温度与气压变化相应改变，因此当高度变化明显时需要进行相应的修正。在计算过程中，由于吸收能力受温度的影响表较小 ( ≤4%)，可以忽略不计，所以往往只需要考虑气压的影响。假设 ωe ( mm)表示辐射传输路程中依据吸收能力折算到大气近地层水蒸气的等效含量，而 ωH ( mm)表示 H ( )高度下水蒸气含量，则有 : 
+ωe= ωH βH2O ( 4)式中，βH2O为高度修正系数，可由经验公式得到: 
+βH2O = exp(－0. H)( 5)
+考虑大气密度随高度而降低，大气湿度随高度的变化满足经验公式［9］: 
+Ha，H =Ha，0exp(－0. H)( 6)式中，Ha，H ( mg /L)为高度为 H处的绝对湿度 ; Ha，0 ( mg /L)为近地处或海平面处的绝对湿度。
+综合水蒸气的吸收能力和水蒸气量随高度的变化，可将高度 H的辐射沿着水平传输路程的水蒸气有效含量表示为: 
+ωe =f·Hr ·Ｒ·exp(－0. H)( 7)
+在倾斜传输路程中，水蒸气的有效含量可通过以下方法计算得到。在高度为 h ( )处的大气单
+
+元层 dr ( )(图 2)中的水蒸气含量为: dωe =f·H ·exp(－0. h) dr ( 8)
+r
+
+式中，h=Ｒsinθ ; θ ( ° )为观测高度角。
+忽略地面曲率影响，对式 ( 8)进行积分可求得从高度 H1 ( )到 H2 ( )的倾斜路程中水蒸气含量为 : 
+e(－0. 5154H1)－e(－0. 5154H2) ωe =f·Hr · ( 9)
+
+0. sinθ将公式 ( 7)、( 9)分别代入公式 ( 3)中，可得不同高度 H水平路程传输的水蒸气吸收透过率为: 
+τH2O( λ) = exp(－u1( λ) · ff 0 ·Hr ·Ｒ·exp(-
+0. H)) ( )倾斜路程传输的水蒸气吸收透过率为: 
+τH2O( λ) = exp(－u1( λ) · ff 0 ·Hr · 
+
+e(－0. 5154H1)－e(－0. 5154H2) 
+)( )
+
+0. sinθ 
+
+λ1～ λ2 ( μm)波段内的水蒸气平均吸收透过率为 : 
+τH2O = λ2－1 λ1 ∫λλ21 τH2O( λ) dλ ( ) 
+
+图 2辐射传输中 (倾斜路线 )吸收物质层有效厚度 Fig. 2 Effective tcess of aorng material layer over the raation trafer( ilid roe) 
+
+
+2. 2 CO2吸收透过率
+
+除了水蒸气，CO2是大气中吸收红外辐射最多的因素。在低层大气中，CO2含量相对稳定，因此由 CO2吸收所产生的辐射衰减近似认为与气象条件无关，吸收透过率仅仅和辐射传输的距离有关，即: 
+τCO2 ( λ) = exp(－.( λ) ·Ｒ)( )式中，.( λ)( km－1 )为 CO2单色红外线性吸收系数。大气温度 5℃，相对湿度 100 %时海平面水平路径 CO2 
+的红外单色线性吸收系数可通过文献［6］查得。考虑高度对 CO2红外吸收能力的影响，对 CO2传输距离进行高度修正，得到以下经验公式:
+Ｒe =ＲH ·e－0. 19H ( )式中，H ( )为红外辐射传输的高度;ＲH ( )为高度 H上红外辐射传输的距离，Ｒe ( )为等效成近地层之后传输的有效距离。
+由于空气压强随海拔高度成指数变化: 
+PH =P0 ·e－0. 123H ( )
+式中，P0( Pa)为海平面上的气压; PH ( Pa)为高度 H处的气压。
+因此，综合考虑 CO2的吸收能力及质量随海拔高度的变化，可得到折算成近地层水平路程传输的等效距离 :
+Ｒe =ＲH ·e－0. 19H ·e－0. 123H =ＲH ·e－0. 313H ( )
+在倾斜路程传输的情况下，类似得到折算成近地层水平路程传输的等效距离为: 
+e－0. 313H1－e－0. 313H2Ｒe = 0. 3sinθ ( )
+将式 ( )、( )分别代入式 ( )中，得到高度 H情况下 CO2水平路程传输的吸收透过率为: 
+τCO2( λ) = exp(－.( λ) ·ＲH ·e－0. 313H )( )
+倾斜路程传输的吸收透过率为:
+－0. 313H1－0. 313H2 
+τCO2( λ) = exp(－.( λ) · e－e )
+0. 3sinθ ( ) λ1～ λ2波段内的 CO2平均吸收透过率为: 
+τCO2 = λ2－1 λ1 ∫λ2λτCO2( λ) dλ ( ) 
+1 
+
+
+2. 3大气吸收透过率
+综合考虑水蒸气、CO2的吸收，可得低层大气吸收透过率 : τz( λ) = τH2O( λ) ·τCO2( λ)( )
+在 λ1～ λ2波段内的低层大气平均吸收透过率为 : 
+1τz= λ2－λ1 ∫λ2λτz( λ) dλ ( ) 
+1 
+3实验结果及分析
+考虑空中军事目标红外辐射主要分布在 3～5 μm和 8～ 12 μm波段［7，9，11－12］，因此实验重点对这两个波段的大气吸收透过率进行了仿真计算，进行MODTＲAN5软件计算时，选用 年美国标准大气模式。 
+
+
+3. 1水平路程传输
+设置水平路程传输距离为 1 ，近地层大气相对湿度为 46 %，大气温度为 15 ℃ (由文献［5］可得该温度对应的水蒸气质量 )，探测系统高度分为 
+0. 2 、3 、8 三种情况。仿真结果如图 3、图 4(左图为水蒸气吸收透过率，右图为 CO2吸收透过率)所示。图 3为不同海拔高度 3～5 μm波段仿真计算结果，图 4为不同海拔高度 8～ 12 μm波段仿真计算结果。
+由图 3、图 4可以看出，水平路程传输情况下，随着海拔高度的增加，水蒸气及 CO2的吸收透过率在不断增大，且通过对大气密度随高度变化影响的修正，吸收透过率得到了明显提升，其中水蒸气的提升幅度大于 CO2，这是因为水蒸气质量受海拔高度的影响大于 CO2。
+
+图 3 3～5 μm波段不同海拔高度水蒸气和 CO2吸收透过率 Fig. 3 Water var and CO2aorion tramittae at fferent altites( from 3～5 μm) 
+
+
+图 4 8～12 μm波段不同海拔高度水蒸气和 CO2吸收透过率 Fig. 4 Water var and CO2 aorion tramittae at fferent altites( from 8～12 μm)
+综合水蒸气及 CO2的吸收，计算不同海拔高度大气平均吸收透过率，结果如表 1所示。
+表 1不同海拔高度大气平均吸收透过率计算结果T．1 Clion rts of e me sion trsmittce at fft tites 
+波段 / μm 3～5 
+8～ 12 
+海拔 / 修正前 修正后 MODTＲ AN5软件  
+0. 2  0. 35  0. 67  0. 33  
+3  0. 74  0. 77  0. 11  
+8  0. 26  0. 82  0. 37  
+0. 2  0. 62  0. 36  0. 31  
+3  0. 23  0. 79  0. 47  
+8  0. 42  0. 80  0.  
+
+通过表 1比较不同海拔高度情况下修正前后与MODTＲAN5软件计算的结果，利用公式 ( )计算出相对误差曲线如图 5所示 : 
+Δτ = τ－τM ·0 % ( ) 
+τM式中，τ为模型计算得到的大气平均吸收透过率 ; τM为MODTＲAN5软件计算的大气平均吸收透过率; Δτ为相对误差。
+
+
+图 5不同海拔高度大气平均吸收透过率修正前后
+相对误差计算结果 
+
+Fig.5Ｒelative errors of average atmosere aorion tramittae at fferent altites由图 5可以看出，水平传输路程情况下，在海拔高度为 0. 2 时，大气密度受高度的影响比较小，所以修正前后的相对误差都比较小，在 3～5 μm波段均小于 2%，其中出现修正后的误差大于修正前的情况是因为MODTＲAN5软件本身在计算该波段吸收透过率时存在一定误差，尤其是针对 CO24. 3吸收带时，计算误差较大［13］。但总体来看，随着海拔高度的不断增加，当高度达到 8 时，修正后的大气平均吸收透过率计算结果明显优于修正前，该现象在 8～ 12 μm波段更为清晰。 2. 2倾斜路程传输设置 H1为 0，H2分别为 1 、2 、5 ，观测高度角 θ为 °，即垂直路程传输，近地层大气相对湿度为 46 %，大气温度为 15 ℃，仿真结果如下图 6、图 7(左图为水蒸气吸收透过率，右图为 CO2吸收透过率 )所示。图 6为不同传输距离 3～5 μm波段的仿真计算结果，图 7为不同传输距离 8～ 12 μm波段的仿真计算结果。
+
+图 6 3～5 μm波段不同垂直传输距离水蒸气和 CO2吸收透过率 Fig. 6 Water var and CO2 aorion tramittae at fferent tramission staes( from 3～5 μm) 
+
+图 7 8～12 μm波段不同垂直传输距离水蒸气和 CO2吸收透过率 Fig. 7 Water var and CO2 aorion tramittae at fferent tramission staes( from 8～12 μm)
+通过观察图 6和图 7可以发现，在垂直路程传输情况，随着传输距离的增加，水蒸气及 CO2的吸收透过率在不断减小，而修正前后的差别也越来越大，从而表明在垂直路程传输情况下，随着传输距离的增加，受大气密度的影响越来越大，主要是因为传输距离的增加使得大气密度对吸收透过率造成的影响积累的越来越大。
+综合水蒸气及 CO2的吸收，计算不同垂直传输距离大气平均吸收透过率，结果如表 2所示。
+
+表 2不同垂直传输距离大气平均吸收透过率计算结果
+T．2 Clion rts of e me sion trsmittce at fft trsmission sts 
+波段 / μm 
+3～5 
+8～ 12 
+传输距离 /  修正前 修正后 MODTＲ AN5软件  
+1  0. 70  0. 73  0. 40  
+2  0. 46  0. 37  0. 92  
+5  0. 00  0. 94  0. 76  
+1  0. 80  0. 44  0. 88  
+2  0. 10  0，18  0. 64  
+5  0. 25  0. 36  0.  
+
+
+通过表 2比较不同传输距离情况下修正前后与MODTＲAN5软件计算的结果，利用公式 ( )计算出相对误差曲线如图 8所示 : 
+
+图 8不同垂直传输距离大气平均吸收透过率
+修正前后相对误差计算结果 
+
+Fig.8Ｒelative errors of average atmosere aorion tramittae at fferent tramission staes同样，由图 8可以看出，在垂直路程传输情况下，当传输距离为 1 时，修正前后的计算误差都比较小，小于 5%，其中在 3～5 μm波段也出现修正前优于修正后的情况。但随着垂直传输距离的增加，修正后的计算结果明显优于修正前，当传输距离为 5 时，修正前的相对误差超过了 25 %。因此，在远距离传输过程中，计算大气吸收透过率必须考虑大气密度的影响。总之，在低层大气环境中，无论是计算不同海拔高度水平传输情况下的大气吸收透过率，还是计算不同传输距离倾斜路程传输情况下的大气吸收透过率，大气密度都会造成一定的影响，且随着海拔高度及传输距离的增加，影响会越来越大，需要进行修正。 
+4结语
+红外辐射在通过大气时会受到大气吸收、散射、
+反射和漫射的影响。其中，大气吸收作为导致低层红外辐射衰减的重要因素，对其进行分析计算是研究红外大气传输的关键，也是有效进行红外目标预警的基础。本文针对低层大气中水蒸气和 CO2两个吸收红外辐射的主要因素，在考虑分子吸收能力受高度影响的基础上，增加大气密度随高度变化的影响，得到修正后的低层大气红外吸收透过率计算模型。该模型在获得大气温度、相对湿度的情况下，便可以计算出任意海拔高度水平路程传输及任意观测角倾斜路径传输的低层大气吸收透过率。最终，通过实验验证了该模型的有效性。由于大气影响因素分析中引用了经验公式，所以一定会影响到计算结果的精度，但对于精度要求不高的工程计算，基本上可满足要求，具有较好的参考价值。
+参考文献 :
+
+［1］ Zhang He，Jiang Xiaohua．Target detection and recognition technology［M］． Beijing: Beijing Institute of Technology Press，2015． ( in Chinese)张合，江小华．目标探测与识别技术［M］．北京 :北京理工大学出版社，2015．
+［2］ Wang Feixiang，Guo Jie，Xu Fangyu，etal．Calculation and measurement of infrared atmospheric transmittance at dif-ferent altitudes［J］． Chinese Optics，2019，12 ( 4): 844-853． ( in Chinese)王飞翔，郭杰，许方宇，等．不同海拔地区红外大气透过率的计算和测量［J］．中国光学，2019，12( 4): 844－853．
+［3］ Chen Xiuhong， Wei Heli， XuQingshan． Infrared atmospheric transmittance calculation model［J］． Infrared and Laser Engineering，2011，40( 5): 811－816． ( in Chi-nese)陈秀红，魏合理，徐青山．红外大气透过率计算模型［J］．红外与激光工程，2011，40( 5): 811－816．
+［4］Ding Guopeng．Ｒesearch on fast calculation and simulation of atmospheric radiation transfer［D］Xi' an: Xidian Uni-versity，2019． ( in Chinese)丁国鹏．大气辐射传输快速计算及仿真技术研究［D］西安 :西安电子科技大学，2019．
+［5］ Song Tengfei，Liu Shunqing，ZhangXuefei． Measurement of total precipitable water in atmosphere with sky brightness monitor［J］． Meteorological Science and Tech-nology，2013，41( 1): 46－50． ( in Chinese)宋腾飞，刘顺庆，张雪飞．利用日晕光度计反演大气水汽含量［J］．气象科学，2013，41( 1): 46－50．
+［6］  Lu Yuan，LingYongshun． The simple method to calculate the atmospheric transmittance of infrared radiation［J］． In-frared Technology，2003，25( 5) : 45－49． ( in Chinese)路远，凌永顺．红外辐射大气透射比的简易计算［J］．红外技术，2003，25( 5) : 45－49． 王大鹏，吴卓昆，王东风．红外对抗技术原理［M］．北京:国防工业出版社，2021．［10］ ChenBoruo． Infrared system［M］． Beijing: National Defense Industry Press，1988． ( in Chinese)陈波若．红外系统［M］．北京 :国防工业出版社，1988． 
+［7］  Zhang Liang，Zhao Feng，WangXuesong． Calculation model for aeroplaneIＲ signature and atmospheric attenua-tion along the line of sight［J］． Infrared Technology，2011， 33( 6) : 367－371． ( in Chinese) ［11］ Zhang Faqiang，Fan Xiang，Cao Cuijiao，etal．Ｒ esearch of the infrared radiation characteristic of cruise missile［J］． Laser＆ Infrared，2013，43 ( 11) : 1229－1233． ( in Chi-nese) 
+张亮，赵峰，王雪松．视线方向上飞机红外特性及大气 张发强，樊祥，曹翠娇，等．巡航导弹的红外辐射特性研 
+衰减模型研究［J］．红外技术，2011，33( 6) : 367－371． 究［J］．激光与红外，2013，43( 11) : 1229－1233． 
+［8］  Mao Xia，Dong Xuyang，DiaoWeihe． Calculation model of infrared radiation of cruise missile and atmospheric atten-uation［J］． Journal of Beijing University of Aeronautics and Astronautics，2008，32( 8) : 952－955． ( in Chinese) ［12］ Li Taorui，Tong Zhongxiang，Huang Hesong，etal． Study on infrared radiation characteristics of aircraft［J］． Laser＆ Infrared，2017，47( 2) : 189－194． ( in Chinese)李韬锐，童中翔，黄鹤松，等．飞机红外辐射特征仿真研 
+毛峡，董旭阳，刁伟鹤．巡航导弹红外辐射及大气衰减 究［J］．激光与红外，2017，47( 2) : 189－194． 
+［9］  计算模型［J］．北京航空航天大学学报，2008，32( 8) : 952－955．Wang Dapeng，Wu Zhuokun，WangDongfeng． Principle and technology of infrared countermeasure［M］． Beijing : National Defense Industry Press，2021． ( in Chinese) ［13］ MaLi． Study of properties of the atmospheric radiative transfer softwareMODTＲ AN5［D］． Hefei: University of Science and Technology of China，2016． ( in Chinese)马力．大气辐射传输软件MODTＲ AN5的性能分析［D］．合肥 :中国科学技术大学，2016．  
+
+
+
+

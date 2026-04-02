@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-cpp",
+			"type": "shell",
+			"command": "cl.exe",
+			"args": [
+				"/Fe:main.exe",
+				"src/main.cpp",
+				"src/Atmosphere.cpp",
+				"src/LowtranModel.cpp"
+			],
+			"group": "build"
+		}
+	]
+}
