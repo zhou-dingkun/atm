@@ -1,6 +1,7 @@
 import argparse
 import csv
 import random
+import re
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -190,12 +191,28 @@ def run_lowtran(lowtran_auto: Path, tape5: Path, coords_x: int, coords_y: int) -
     if proc.returncode != 0:
         raise RuntimeError(proc.stdout + "\n" + proc.stderr)
 
-    key = "AVERAGE TRANSMITTANCE ="
+    key = "AVERAGE TRANSMITTANCE"
     for line in proc.stdout.splitlines():
         if key in line:
-            value = line.split("=", 1)[1].strip()
-            return float(value)
-    raise RuntimeError("AVERAGE TRANSMITTANCE not found in lowtran output")
+            m = re.search(r"[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?", line)
+            if m:
+                return float(m.group(0))
+
+    # 回退：某些运行场景下 lowtran_auto 只提示完成，不回显平均透过率。
+    tape6 = lowtran_auto.resolve().parent.parent / "lowtran7" / "TAPE6"
+    if tape6.exists():
+        text = tape6.read_text(encoding="utf-8", errors="ignore")
+        for line in text.splitlines():
+            if key in line:
+                m = re.search(r"[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?", line)
+                if m:
+                    return float(m.group(0))
+
+    raise RuntimeError(
+        "AVERAGE TRANSMITTANCE not found in lowtran output/TAPE6\n"
+        f"stdout:\n{proc.stdout}\n"
+        f"stderr:\n{proc.stderr}"
+    )
 
 
 def configure_plot_font(plt) -> None:
@@ -299,11 +316,19 @@ def main() -> None:
         default=Path("compare_plot.png"),
         help="Plot image output path",
     )
+    parser.add_argument(
+        "--cases-file",
+        type=Path,
+        default=Path("compare_cases.csv"),
+        help="Case CSV file path (default: compare_cases.csv)",
+    )
     parser.add_argument("--show", action="store_true", help="Show plot window")
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent
-    csv_path = root / "compare_cases.csv"
+    csv_path = args.cases_file
+    if not csv_path.is_absolute():
+        csv_path = root / csv_path
     atm_exe = root / "src" / "atm.exe"
     lowtran_auto = root / "src" / "lowtran_auto.exe"
 
